@@ -43,7 +43,13 @@ for (int i = 0; i < productTitlesDecoded.Count; i++)
     extractedProducts.Add(currentProduct);
 }
 
-var productsInJson = JsonConvert.SerializeObject(extractedProducts, Formatting.Indented);
+var serializationSettings = new JsonSerializerSettings
+{
+    ContractResolver = new CamelCasePropertyNamesContractResolver(),
+    Formatting = Formatting.Indented
+};
+
+var productsInJson = JsonConvert.SerializeObject(extractedProducts, serializationSettings);
 
 Console.WriteLine(productsInJson);
 

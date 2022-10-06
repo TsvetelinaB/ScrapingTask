@@ -2,8 +2,8 @@
 {
     public class Product
     {
-        public string productName { get; set; }
-        public string price { get; set; }
-        public string rating { get; set; }
+        public string ProductName { get; set; }
+        public string Price { get; set; }
+        public string Rating { get; set; }
     }
 }
